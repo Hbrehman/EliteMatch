@@ -1,3 +1,4 @@
+const catchAsync = require("./../utils/catchAsync");
 const bcryptjs = require("bcryptjs");
 const sharp = require("sharp");
 const multer = require("multer");
@@ -12,7 +13,7 @@ const {
   validateEbl,
   validateInterest,
   validateFamily
-} = require("./../model/user_model");
+} = require("../model/user_model");
 
 /*
 // Create multer Storage
@@ -65,7 +66,8 @@ exports.resizeUserPhoto = async (req, res, next) => {
   next();
 };
 
-exports.UpdateUserDocument = async (req, res) => {
+// name should be changed to updateProfilePic
+exports.updateProfilePic = async (req, res) => {
   console.log(req.file);
   console.log(req.body);
   if (req.file) {
@@ -130,7 +132,7 @@ exports.createUser = async (req, res) => {
       message: error.details[0].message
     });
 
-  // check user with same email does not exist
+  // check if user with same email exists
   let user = await User.findOne({ email: req.body.email });
   if (user)
     return res.status(400).json({
@@ -207,7 +209,8 @@ exports.updateUserEbl = async (req, res) => {
         }
       },
       {
-        new: true
+        new: true,
+        runValidators: true
       }
     );
     res.status(200).json({
@@ -243,7 +246,8 @@ exports.updateUserInterest = async (req, res) => {
         }
       },
       {
-        new: true
+        new: true,
+        runValidators: true
       }
     );
     res.status(200).json({
@@ -277,7 +281,8 @@ exports.UpdateUserFamily = async (req, res) => {
         }
       },
       {
-        new: true
+        new: true,
+        runValidators: true
       }
     );
     // console.log(user);
@@ -368,29 +373,23 @@ exports.getUserFamily = async (req, res) => {
   }
 };
 
-exports.updateUserViaObj = async (req, res) => {
-  console.log(req.body);
-  try {
-    // create new user
-    let user = await User.findOneAndUpdate(
-      {
-        _id: req.params.id
-      },
-      {
-        $set: req.body
-      },
-      {
-        new: true
-      }
-    );
-    res.status(200).json({
-      status: "success",
-      message: "Updated successfully..",
-      data: user
-    });
-  } catch (ex) {
-    for (const fields in ex.errors) {
-      console.log(ex.errors[fields].message);
+exports.updateUserDataSingleEl = catchAsync(async (req, res) => {
+  // create new user
+  let user = await User.findOneAndUpdate(
+    {
+      _id: req.params.id
+    },
+    {
+      $set: req.body
+    },
+    {
+      new: true,
+      runValidators: true
     }
-  }
-};
+  );
+  res.status(200).json({
+    status: "success",
+    message: "Updated successfully..",
+    data: user
+  });
+});

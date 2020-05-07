@@ -1,44 +1,50 @@
 const express = require("express");
-const userController = require("./../controller/user_controller");
+const userController = require("../controller/userController");
+const authController = require("../controller/authController");
 
 const router = express.Router();
 
 // Create New User
-router.route("/").post(userController.createUser);
+router.route("/signup").post(authController.signUp);
+router.route("/login").post(authController.logIn);
+router.route("/forgotPassword").post(authController.forgotPassword);
+router.route("/resetPassword/:token").post(authController.resetPassword);
+
+// router.route("/").post(authController.signUp);
 
 // Get users basic information
 router
   .route("/basic/:id")
   .get(userController.getUserBasicInfo)
-  .patch(userController.updateUserViaObj);
+  .patch(userController.updateUserDataSingleEl);
 
 // Upload Profile pic
 router.patch(
   "/profilePic/:id",
   userController.uploadProfilePic,
   userController.resizeUserPhoto,
-  userController.UpdateUserDocument
+  userController.updateProfilePic
 );
 
 // Get Users Education, Basics and lifestyle
 router
   .route("/ebl/:id")
   .get(userController.getUserEbl)
-  .patch(userController.updateUserEbl)
-  .post(userController.updateUserViaObj);
+  .put(userController.updateUserEbl)
+  .patch(userController.updateUserDataSingleEl);
 
 // Get Users interest Information
 router
   .route("/interest/:id")
   .get(userController.getUserInterest)
-  .patch(userController.updateUserInterest)
-  .post(userController.updateUserViaObj);
+  .put(userController.updateUserInterest)
+  .patch(userController.updateUserDataSingleEl);
 
 // Get Users family Information
 router
   .route("/family/:id")
   .get(userController.getUserFamily)
-  .patch(userController.UpdateUserFamily)
-  .post(userController.updateUserViaObj);
+  .put(userController.UpdateUserFamily)
+  .patch(userController.updateUserDataSingleEl);
 
 module.exports = router;
