@@ -9,7 +9,7 @@ router.route("/signup").post(authController.signUp);
 router.route("/login").post(authController.logIn);
 router.route("/forgotPassword").post(authController.forgotPassword);
 router.route("/resetPassword/:token").post(authController.resetPassword);
-
+router.route("/getMatches").get(userController.getMatches);
 // router.route("/").post(authController.signUp);
 
 // Get users basic information

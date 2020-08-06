@@ -202,6 +202,9 @@ const userSchema = new mongoose.Schema({
     minlength: 5,
     maxlength: 255,
   },
+  interestedPpl: {
+    type: String,
+  },
   passwordChangedAt: Date,
   passwordResetToken: String,
   passwordResetExpire: Date,

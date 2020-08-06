@@ -12,7 +12,7 @@ const {
   validate,
   validateEbl,
   validateInterest,
-  validateFamily
+  validateFamily,
 } = require("../model/user_model");
 
 /*
@@ -46,7 +46,7 @@ const multerStorage = multer.memoryStorage();
 // Uploading images using multer package
 const upload = multer({
   storage: multerStorage,
-  fileFilter: multerFilter
+  fileFilter: multerFilter,
 });
 
 // upload.single("profilePic") here profilePic is name of filed used to upload image
@@ -74,19 +74,30 @@ exports.updateProfilePic = async (req, res) => {
     const pic = req.file.filename;
 
     await User.findByIdAndUpdate(req.params.id, {
-      photo: pic
+      photo: pic,
     });
     res.status(200).json({
       status: "successful",
       message: "Photo uploaded successully",
       data: {
-        photo: pic
-      }
+        photo: pic,
+      },
     });
   } else {
     return res.status(400).json("No image found...");
   }
 };
+
+exports.getMatches = catchAsync(async (req, res, next) => {
+  let users = await User.find();
+  if (users) {
+    res.status(200).json({
+      status: "success",
+      message: "All users",
+      data: users,
+    });
+  }
+});
 
 // Get users basic information
 exports.getUserBasicInfo = async (req, res) => {
@@ -106,13 +117,14 @@ exports.getUserBasicInfo = async (req, res) => {
           "gender",
           "dob",
           "religion",
-          "country"
-        ])
+          "country",
+          "interestedPpl",
+        ]),
       });
     } else {
       return res.status(404).send({
         status: "fail",
-        message: "Information not found..."
+        message: "Information not found...",
       });
     }
   } catch (ex) {
@@ -129,7 +141,7 @@ exports.createUser = async (req, res) => {
   if (error)
     return res.status(400).send({
       status: "fail",
-      message: error.details[0].message
+      message: error.details[0].message,
     });
 
   // check if user with same email exists
@@ -137,7 +149,7 @@ exports.createUser = async (req, res) => {
   if (user)
     return res.status(400).json({
       status: "fail",
-      message: "User with same email is already registered..."
+      message: "User with same email is already registered...",
     });
 
   // Hash password
@@ -168,8 +180,8 @@ exports.createUser = async (req, res) => {
         "gender",
         "country",
         "religion",
-        "dob"
-      ])
+        "dob",
+      ]),
     });
 };
 
@@ -179,7 +191,7 @@ exports.updateUser = async (req, res) => {
     const user = await User.findOneAndUpdate(
       { _id: req.params.id },
       {
-        $set: req.body
+        $set: req.body,
       }
     );
   } catch (ex) {
@@ -197,7 +209,7 @@ exports.updateUserEbl = async (req, res) => {
   if (error)
     return res.status(400).send({
       status: "fail",
-      message: error.details[0].message
+      message: error.details[0].message,
     });
   try {
     // create new user
@@ -205,18 +217,18 @@ exports.updateUserEbl = async (req, res) => {
       req.params.id,
       {
         $set: {
-          usersEbl: new Ebl(req.body)
-        }
+          usersEbl: new Ebl(req.body),
+        },
       },
       {
         new: true,
-        runValidators: true
+        runValidators: true,
       }
     );
     res.status(200).json({
       status: "success",
       message: "Updated successfully..",
-      data: user.usersEbl
+      data: user.usersEbl,
     });
   } catch (ex) {
     // console.log(ex.errmsg);
@@ -234,7 +246,7 @@ exports.updateUserInterest = async (req, res) => {
   if (error)
     return res.status(400).send({
       status: "fail",
-      message: error.details[0].message
+      message: error.details[0].message,
     });
   try {
     // create new user
@@ -242,18 +254,18 @@ exports.updateUserInterest = async (req, res) => {
       req.params.id,
       {
         $set: {
-          userInterest: new Interest(req.body)
-        }
+          userInterest: new Interest(req.body),
+        },
       },
       {
         new: true,
-        runValidators: true
+        runValidators: true,
       }
     );
     res.status(200).json({
       status: "success",
       message: "Updated successfully..",
-      data: user.userInterest
+      data: user.userInterest,
     });
   } catch (ex) {
     for (const fields in ex.errors) {
@@ -269,7 +281,7 @@ exports.UpdateUserFamily = async (req, res) => {
   if (error)
     return res.status(400).send({
       status: "fail",
-      message: error.details[0].message
+      message: error.details[0].message,
     });
   try {
     // create new user
@@ -277,19 +289,19 @@ exports.UpdateUserFamily = async (req, res) => {
       req.params.id,
       {
         $set: {
-          familyInfo: new Family(req.body)
-        }
+          familyInfo: new Family(req.body),
+        },
       },
       {
         new: true,
-        runValidators: true
+        runValidators: true,
       }
     );
     // console.log(user);
     res.status(200).json({
       status: "success",
       message: "Updated successfully..",
-      data: user.familyInfo
+      data: user.familyInfo,
     });
   } catch (ex) {
     for (const fields in ex.errors) {
@@ -308,12 +320,12 @@ exports.getUserEbl = async (req, res) => {
         status: "success",
         message: "Education, Basics and Lifestyle",
         name: user.name,
-        data: user.usersEbl
+        data: user.usersEbl,
       });
     } else {
       return res.status(200).send({
         status: "fail",
-        message: "Information not found..."
+        message: "Information not found...",
       });
     }
   } catch (ex) {
@@ -333,12 +345,12 @@ exports.getUserInterest = async (req, res) => {
       res.status(200).json({
         status: "success",
         message: "What I am Looking for",
-        data: user.userInterest
+        data: user.userInterest,
       });
     } else {
       return res.status(200).send({
         status: "fail",
-        message: "Information not found..."
+        message: "Information not found...",
       });
     }
   } catch (ex) {
@@ -358,12 +370,12 @@ exports.getUserFamily = async (req, res) => {
       res.status(200).json({
         status: "success",
         message: "Family Details",
-        data: user.familyInfo
+        data: user.familyInfo,
       });
     } else {
       return res.status(200).send({
         status: "fail",
-        message: "Information not found..."
+        message: "Information not found...",
       });
     }
   } catch (ex) {
@@ -377,19 +389,19 @@ exports.updateUserDataSingleEl = catchAsync(async (req, res) => {
   // create new user
   let user = await User.findOneAndUpdate(
     {
-      _id: req.params.id
+      _id: req.params.id,
     },
     {
-      $set: req.body
+      $set: req.body,
     },
     {
       new: true,
-      runValidators: true
+      runValidators: true,
     }
   );
   res.status(200).json({
     status: "success",
     message: "Updated successfully..",
-    data: user
+    data: user,
   });
 });
