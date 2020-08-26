@@ -4,7 +4,7 @@
   "description": "",
   "main": "app.js",
   "scripts": {
-    "start": "nodemon server.js",
+    "start": "node server.js",
     "start:both": "concurrently \"npm run start:server\" \"npm run start:client\"",
     "dev": "nodemon server.js",
     "build": "cd client && npm run build",
@@ -29,5 +29,8 @@
     "pug": "^2.0.4",
     "sharp": "^0.24.1",
     "underscore": "^1.9.2"
+  },
+  "engines": {
+    "node": ">=10.0.0"
   }
 }
