@@ -1,0 +1,101 @@
+
+.navbar {
+    padding: 16px 0 !important;
+
+    .navbar-brand {
+        border-right: 10px solid rgba(255, 255, 255, 0.29);
+        border-bottom: 10px solid rgba(255, 255, 255, 0.29);
+        border-left: 10px solid rgba(68, 199, 244, 0.37);
+        border-top: 10px solid rgba(68, 199, 244, 0.37);
+        padding: 2px 13px !important;
+        .navbar__logo {
+            font-family: cursive;
+            font-weight: 600;
+            font-size: 30px;
+            color: rgba($color: #fff, $alpha: 0.78);
+            letter-spacing: 5px;
+            margin-bottom: 0px;
+            #elite {
+                display: block;
+                margin-bottom: -5px;
+            }
+            #match {
+                color: $primary-color;
+                font-size: 25px;
+                padding-left: 25px;
+            }
+        }
+    }
+    
+    .navbar-collapse {
+        padding-top: 15px;
+        padding-bottom: 15px;
+        background: rgba($color: #000000, $alpha: 0.6);
+    }
+    .nav-link {
+        font-size: 0.8rem;
+        font-family: Arial, Helvetica, sans-serif;
+        color: rgba($color: #fff, $alpha: 0.78) !important;
+        text-transform: uppercase;
+        padding: 4px 13px !important;
+        letter-spacing: 3px;
+        width: 40%;
+        margin: 1px auto;
+        text-align: center;
+        border: 3px solid transparent;
+        @include transition-ease;
+        &:hover {
+            border-right: 3px solid rgba(255, 255, 255, 0.29);
+            border-bottom: 3px solid rgba(255, 255, 255, 0.29);
+            border-left: 3px solid rgba(68, 199, 244, 0.37);
+            border-top: 3px solid rgba(68, 199, 244, 0.37);
+
+            @include transition-ease;
+        }
+
+    }
+    .active {
+        border-right: 3px solid rgba(255, 255, 255, 0.29);
+        border-bottom: 3px solid rgba(255, 255, 255, 0.29);
+        border-left: 3px solid rgba(68, 199, 244, 0.37);
+        border-top: 3px solid rgba(68, 199, 244, 0.37);
+    }
+    .navbar-toggler-icon {
+        background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(234, 54, 33, 1)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E") !important;
+      }
+      
+      .navbar-toggler {
+        border-color: rgba(255,255,255, 0.78) !important;
+        border-radius: 0;
+      }
+
+
+     
+}
+
+
+ .navbar-btns {
+     position: absolute;
+     text-align: right;
+     top: 67px;
+     right: 10px;
+        .btn1 {
+            color: rgba($color: #fff, $alpha: 0.78) !important;
+            letter-spacing: 1px;
+            border-radius: 0 !important;
+            background: rgba(0, 0, 0, 0.2) !important;
+    
+            &:hover {
+                background: rgba(255, 255, 255, 0.1) !important;
+                color: #fff;
+            }
+        }
+    
+      }
+
+      
+      .navbar-toggler {
+        position: absolute;
+        top: 16px;
+        right: 10px;
+    }

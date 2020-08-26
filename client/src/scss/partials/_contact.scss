@@ -1,0 +1,36 @@
+
+#contact-us {
+    .card {
+        background-color: #0E0E0E !important;
+        padding: 30px 35px;
+        flex-direction: row !important;
+    }
+    .card-body {
+        padding: 0 !important;
+        h3 {
+            padding-top: 0 !important;
+            font-size: 1.6rem;
+            font-weight: 500 !important;
+            letter-spacing: 0.6px;
+
+        }
+        .form-control {
+            width: 100%;
+            outline: none;
+            background-color: #0E0E0E;
+        }
+    }
+
+    #loc-data {
+
+        h3 {
+            display: inline-block;
+            color: $primary-color;
+            padding: 0px 10px;
+            line-height: 1.6;
+            letter-spacing: 1px;
+            font-size: 1.2rem;
+        }
+    }
+    overflow-x: hidden ;
+}

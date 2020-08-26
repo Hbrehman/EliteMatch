@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <!-- Basic Uppy styles -->
+    <!-- <link rel="stylesheet" href="/uppy/uppy.min.css" /> -->
+    <link
+      href="https://transloadit.edgly.net/releases/uppy/v1.9.2/uppy.min.css"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="UppyForm">
+      <form action="https://upload-endpoint.uppy.io/upload">
+        <h5>
+          Uppy was not loaded — slow connection, unsupported browser, weird JS
+          error on a page — but the upload still works, because HTML is cool
+          like that
+        </h5>
+        <input type="file" name="files[]" multiple="" />
+        <button type="submit">Fallback Form Upload</button>
+      </form>
+    </div>
+
+    <div class="UppyProgressBar"></div>
+
+    <!-- Uploaded files list -->
+    <div class="uploaded-files">
+      <h5>Uploaded files:</h5>
+      <ol></ol>
+    </div>
+    <!-- 
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Uppy</title>
+
+  </head>
+  <body>
+    <div id="drag-drop-area"></div> -->
+
+    <script src="https://transloadit.edgly.net/releases/uppy/v1.9.2/uppy.min.js"></script>
+    <script>
+      require("es6-promise/auto");
+      require("whatwg-fetch");
+      const Uppy = require("@uppy/core");
+      const FileInput = require("@uppy/file-input");
+      const XHRUpload = require("@uppy/xhr-upload");
+      const ProgressBar = require("@uppy/progress-bar");
+
+      const uppy = new Uppy({ debug: true, autoProceed: true });
+      uppy.use(FileInput, {
+        target: ".UppyForm",
+        replaceTargetContent: true
+      });
+      uppy.use(ProgressBar, {
+        target: ".UppyProgressBar",
+        hideAfterFinish: false
+      });
+      uppy.use(XHRUpload, {
+        endpoint: "https://upload-endpoint.uppy.io/upload",
+        formData: true,
+        fieldName: "files[]"
+      });
+
+      // And display uploaded files
+      uppy.on("upload-success", (file, response) => {
+        const url = response.uploadURL;
+        const fileName = file.name;
+
+        document.querySelector(
+          ".uploaded-files ol"
+        ).innerHTML += `<li><a href="${url}" target="_blank">${fileName}</a></li>`;
+      });
+    </script>
+  </body>
+</html>

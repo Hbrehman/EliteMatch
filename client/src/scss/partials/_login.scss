@@ -1,0 +1,110 @@
+#login-form {
+    padding: 2.5rem;
+    border: 2px solid #38A1F3;
+    
+    
+   .btn {
+    background: $primary-color !important;
+    outline: none !important;
+    border: none !important;
+    border-radius: 0 !important;
+    &:hover {
+        background: #38A1F3 !important;
+    }
+}
+    }
+
+    #input-parent {
+        width: 100%;
+        span {
+            // padding: 1rem 1rem 0rem 1rem;
+            color: #000;
+            letter-spacing: 0.6px;
+            font-size: 14px;
+            font-weight: 500;
+            display: inline-block;
+            width: 30%;
+        }
+        .input-itself {
+            outline: none;
+            letter-spacing: 0.6px;
+            width: 68%;
+            border: none;
+            border-bottom: 1px solid #999;
+            padding: 10px 0px 10px 10px ; 
+            margin-bottom: 18px;
+        }
+        
+        .input-itself:invalid {
+            border-bottom: 1px solid $primary-color;
+        }
+        .input-itself:valid {
+            border-bottom: 1px solid $secondary-color;
+        }
+    }
+    
+    
+   #remember-me {
+       margin-bottom: 20px;
+
+
+
+       h3 {
+           font-size: 20px;
+           padding-left: 15px;
+           color: #212121;
+           display: inline;
+       }
+       #checkbox {
+           display: inline-block;
+           width: 50%;
+       }
+       span {
+        padding-left: 5px;
+        width: 30%;
+        color: #333;
+        font-weight: 500;
+        line-height: 1.4;
+       }
+   }
+
+
+#why-join {
+    padding: 1rem;
+    border: 2px solid #38A1F3;
+
+    p {
+        font-size: 1.1rem;
+    }
+
+    .btn {
+        background: $primary-color !important;
+        outline: none !important;
+        font-size: 1rem;
+        letter-spacing: 0.6px;
+        border: none !important;
+        border-radius: 0 !important;
+        &:hover {
+            background: #38A1F3 !important;
+        }
+    }
+
+    ul {
+        list-style: none;
+        padding-bottom: 10px;
+        margin-bottom: 10px;
+        border-bottom: 2px dotted #999;
+      }
+      
+      li {
+          font-size: 1.1rem;
+      }
+
+      ul li:before {
+        content: '✓';
+        color: $primary-color;
+        padding-right: 10px;
+      }
+
+ 
+}

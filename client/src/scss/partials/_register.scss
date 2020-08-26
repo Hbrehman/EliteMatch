@@ -1,0 +1,116 @@
+
+#register-form {
+    padding: 2.5rem;
+    border: 2px solid $secondary-color;
+
+    .select-design {
+        border-radius: 0 !important;
+        border: 0px solid #ced4da;
+        outline: none;
+        letter-spacing: 0.6px;
+        width: 68%;
+        border: none;
+        border-bottom: 1px solid #999;
+        padding: 10px 0px 10px 10px ; 
+        margin-bottom: 18px;
+    }
+
+    
+
+   .btn {
+       background: $primary-color !important;
+       outline: none !important;
+       border: none !important;
+       border-radius: 0 !important;
+
+       &:hover {
+        background: $secondary-color !important;
+    }
+   }
+
+   input:valid {
+       border-bottom: 1px solid $secondary-color;
+   }
+
+    input:invalid {
+        border-bottom: 1px solid $primary-color;
+    }
+
+    select:valid {
+        border-bottom: 1px solid $secondary-color;
+    }
+    select:invalid {
+        border-bottom: 1px solid $primary-color;
+    }
+
+
+// Radio button styling
+   
+   [type="radio"]:checked,
+   [type="radio"]:not(:checked) {
+       position: absolute;
+       left: -9999px;
+   }
+   [type="radio"]:checked + label,
+   [type="radio"]:not(:checked) + label
+   {
+       position: relative;
+       padding-left: 28px;
+       cursor: pointer;
+       line-height: 20px;
+       display: inline-block;
+       color: #666;
+   }
+   [type="radio"]:checked + label:before,
+   [type="radio"]:not(:checked) + label:before {
+       content: '';
+       position: absolute;
+       left: 0;
+       top: 0;
+       width: 18px;
+       height: 18px;
+       border: 1px solid #ddd;
+       border-radius: 100%;
+       background: #fff;
+   }
+   [type="radio"]:checked + label:after,
+   [type="radio"]:not(:checked) + label:after {
+       content: '';
+       width: 12px;
+       height: 12px;
+       background: $primary-color;
+       position: absolute;
+       top: 3px;
+       left: 3px;
+       border-radius: 100%;
+       -webkit-transition: all 0.2s ease;
+       transition: all 0.2s ease;
+   }
+   [type="radio"]:not(:checked) + label:after {
+       opacity: 0;
+       -webkit-transform: scale(0);
+       transform: scale(0);
+   }
+   [type="radio"]:checked + label:after {
+       opacity: 1;
+       -webkit-transform: scale(1);
+       transform: scale(1);
+   }
+    
+   }
+
+
+//    Last card
+    .Easy-steps-to {
+        ul {
+        margin-bottom: 0px !important;
+        border-bottom:none !important;
+        
+      ul li:before {
+        content: '✓';
+        color: $primary-color;
+        padding-right: 10px;
+      }
+      }
+
+    }

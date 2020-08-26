@@ -4,12 +4,21 @@
   "description": "",
   "main": "app.js",
   "scripts": {
-    "start": "nodemon app.js"
+    "start": "nodemon server.js",
+    "start:both": "concurrently \"npm run start:server\" \"npm run start:client\"",
+    "dev": "nodemon server.js",
+    "build": "cd client && npm run build",
+    "install:client": "npm install --prefix client",
+    "install:server": "npm install",
+    "start:server": "nodemon server.js",
+    "start:client": "npm start --prefix client",
+    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install && npm run install:client && npm run build"
   },
   "author": "hbrehman",
   "license": "MIT",
   "dependencies": {
     "bcryptjs": "^2.4.3",
+    "concurrently": "^5.3.0",
     "dotenv": "^8.2.0",
     "express": "^4.17.1",
     "joi": "^14.3.1",

@@ -1,0 +1,40 @@
+$primary-color: #EA3621;
+$secondary-color: #38A1F3;
+
+
+
+.dark-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba($color: #000000, $alpha: 0.7);
+}
+
+@mixin  flex-center {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+@mixin transition-ease {
+    transition: all 0.5s ease-in-out;
+}
+
+@mixin media-sm {
+    @media screen and (max-width: 576px) {
+        @content;
+    }
+}
+@mixin media-md {
+    @media screen and (min-width: 768px) {
+        @content;
+    }
+}
+@mixin media-lg {
+    @media screen and (min-width: 1020px) {
+        @content;
+    }
+}

@@ -1,0 +1,129 @@
+#edit__btn {
+  transition: 0.1s all ease-in;
+  border: none;
+  padding: 2px 5px;
+  font-size: 12px;
+  letter-spacing: 2px;
+  align-self: center;
+  color: #fff;
+  background-color: $primary-color;
+  border-radius: 3px;
+  display: none;
+}
+
+#save__btn {
+  transition: 0.2s all ease-in;
+  border: none;
+  padding: 2px 5px;
+  font-size: 12px;
+  letter-spacing: 2px;
+  align-self: center;
+  color: #fff;
+  background-color: $secondary-color;
+  border-radius: 3px;
+}
+
+#save__btn:hover {
+  padding: 2px 6px;
+}
+
+#edit__input {
+  align-self: center;
+  margin-right: 10%;
+  border: none;
+  outline: none;
+  border-bottom: 1px solid $primary-color;
+  padding: 0px 5px;
+  width: 35%;
+}
+
+#edit__btn:hover {
+  padding: 2px 6px;
+}
+
+#match__data:hover {
+  #edit__btn {
+    display: inline;
+  }
+}
+
+.form-style {
+  padding: 1.5rem;
+  border: 2px solid #38a1f3;
+  margin: 0 5px;
+  .btn {
+    background: $primary-color !important;
+    outline: none !important;
+    border: none !important;
+    border-radius: 0 !important;
+    margin-top: auto;
+    &:hover {
+      background: #38a1f3 !important;
+    }
+  }
+}
+
+#info-form {
+  height: 100%;
+}
+
+#user-avatar {
+  display: none;
+}
+
+#match__img {
+  position: relative;
+  .fa-pencil-alt {
+    width: 30px;
+    padding: 10px;
+    height: 30px;
+    font-size: 13px;
+    // font-weight: 300;
+    background-color: $secondary-color;
+    // background-color: #dbe4f8;
+    border-radius: 100%;
+    color: #fff;
+    position: absolute;
+    bottom: 50px;
+    right: 0px;
+  }
+}
+
+#pic-uploader {
+  font-size: 13px;
+  font-weight: 400;
+  letter-spacing: 2px;
+  background: $primary-color !important;
+  outline: none !important;
+  border: none !important;
+  border-radius: 2px !important;
+  padding: 4px 15px !important;
+}
+
+#form-text {
+  color: $primary-color;
+  font-family: cursive;
+  margin: 20px 0;
+}
+
+.input-itself:invalid {
+  border-bottom: 1px solid $secondary-color !important;
+}
+.input-itself:valid {
+  border-bottom: 1px solid $secondary-color;
+}
+
+#interest-modal {
+  .modal-header {
+    color: #fff;
+    background-color: $primary-color;
+    border-radius: 0;
+  }
+  .btn {
+    background-color: $primary-color;
+    color: #fff;
+    border-radius: 0;
+    font-size: 14px;
+    letter-spacing: 0.5px;
+  }
+}

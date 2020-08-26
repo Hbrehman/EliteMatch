@@ -1,0 +1,71 @@
+#matches {
+    #match__img {
+        margin-top: 50px;
+        width: 230px;
+        height: 230px;
+        img {
+            height: 100%;
+            width: 100%;
+        }
+    }
+    #match__data {
+        h3 {
+            display: inline-block;
+            color: #4A4A4A;
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 1rem;
+            font-weight: 600;
+            margin: 7px 0;
+            width: 141px;
+            letter-spacing: 1px;
+        }
+        span {
+            font-size: 1rem;
+            color: #8A8A8A;
+            letter-spacing: 1px;
+        }
+    }
+    #buttons {
+        .btn{
+            background: $secondary-color !important;
+            outline: none !important;
+            font-size: 1rem;
+            letter-spacing: 0.6px;
+            border: none !important;
+            border-radius: 0 !important;
+            &:hover {
+                background: $primary-color !important;
+            }
+
+        }
+    }
+    #about-match {
+        h3 {
+            font-size: 1rem;
+            font-weight: 700;
+        }
+        p {
+            font-size: 1.1rem;
+            line-height: 1.6;
+            letter-spacing: 1px;
+        }
+        span {
+            font-weight: 500;
+            color: $primary-color;
+        }
+        .btn {
+            background: $primary-color !important;
+            outline: none !important;
+            font-size: 1rem;
+            letter-spacing: 0.6px;
+            border: none !important;
+            border-radius: 0 !important;
+            &:hover {
+                background: $secondary-color !important;
+            }
+
+        }
+        border-bottom: 1px dotted #4a4a4a;
+        padding-bottom: 10px;
+    }
+}

@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Matrimonial Project</title>
+    <link
+      href="https://fonts.googleapis.com/css?family=Pacifico&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div id="about__main--display">
+      <!-- Navbar -->
+      <div class="container">
+        <nav class="navbar navbar-expand-md navbar-light">
+          <a href="index.html" class="navbar-brand">
+            <h1 class="navbar__logo">
+              <span id="elite">Elite</span> <span id="match"> Match </span>
+            </h1></a
+          >
+          <button
+            class="navbar-toggler"
+            data-toggle="collapse"
+            data-target="#navbar-nav"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbar-nav">
+            <ul class="navbar-nav">
+              <li class="nav-item">
+                <a href="index.html" class="nav-link">Home</a>
+              </li>
+              <li class="nav-item">
+                <a href="about.html" class="nav-link">About</a>
+              </li>
+              <li class="nav-item">
+                <a href="matches.html" class="nav-link">Matches</a>
+              </li>
+              <li class="nav-item">
+                <a href="contact.html" class="nav-link">Contact</a>
+              </li>
+            </ul>
+          </div>
+          <div class="navbar-btns">
+            <!-- <a class="btn1 btn btn-outline-light py-2 px-3" href="login.html"
+              >Log In</a
+            >
+            <a
+              class="btn1 btn btn-outline-light py-2 px-3 ml-2"
+              href="register.html"
+              >Register</a
+            > -->
+          </div>
+        </nav>
+      </div>
+    </div>
+
+    <section id="navigator">
+      <div class="container">
+        <a href="index.html">Home</a><i class="fas fa-angle-double-right"></i
+        ><span>Login</span>
+      </div>
+    </section>
+
+    <!-- Login -->
+    <section id="login" class="my-5">
+      <div id="about-us" class="text-center">
+        <h3 class="pb-2 mb-4">Login Now</h3>
+      </div>
+      <div class="container">
+        <div class="row">
+          <div class="col-md-7 mb-4">
+            <form id="login-form" autocomplete="off">
+              <!-- div to show alerts -->
+              <div id="alert"></div>
+
+              <div id="input-parent">
+                <span>EMAIL:</span>
+                <input
+                  type="email"
+                  required
+                  name="email"
+                  class="input-itself"
+                  placeholder="Email"
+                />
+              </div>
+
+              <div id="input-parent">
+                <span> PASSWORD:</span>
+                <input
+                  type="password"
+                  minlength="7"
+                  maxlength="255"
+                  required
+                  name="password"
+                  class="input-itself"
+                  placeholder="Password"
+                />
+              </div>
+              <div id="remember-me">
+                <div id="checkbox">
+                  <!-- <input type="checkbox" /> -->
+                  <!-- <h3>Remember Me</h3> -->
+                </div>
+                <!-- <a href="#"><span>Forgot Password?</span></a> -->
+              </div>
+              <a class="btn btn-block btn-lg btn-primary" id="sign--in" href=""
+                >SIGN IN</a
+              >
+            </form>
+          </div>
+          <div class="col-md-5">
+            <div id="why-join">
+              <h3>Why Join Elite Match</h3>
+              <p class="text-muted">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+              </p>
+
+              <ul class="list-group">
+                <li class="list-item">Lorem, ipsum.</li>
+                <li class="list-item">Lorem, ipsum.</li>
+                <li class="list-item">Lorem, ipsum.</li>
+                <li class="list-item">Lorem, ipsum.</li>
+              </ul>
+
+              <a class="btn btn-lg btn-primary" href="register.html"
+                >REGISTER</a
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer  -->
+    <footer class="pt-5 text-center">
+      <div class="container">
+        <div class="row mb-5">
+          <div class="col-sm-4 mb-4">
+            <h3>Location:</h3>
+            <span class="custom-text-muted d-block"
+              >Dummy Adress, Sargodha</span
+            >
+            <span class="custom-text-muted d-block">Punjab, Pakistan</span>
+          </div>
+          <div class="col-sm-4 mb-4">
+            <h3>Contact us:</h3>
+            <span class="d-block"
+              >Phone: &nbsp;<span class="custom-text-muted"
+                >923001234567</span
+              ></span
+            >
+            <span class="d-block"
+              >Email:&nbsp;<span class="custom-text-muted email">
+                someone@example.com</span
+              ></span
+            >
+          </div>
+          <div class="col-sm-4 mb-4">
+            <h3>Opening hours:</h3>
+            <span class="custom-text-muted d-block">Working days (8am-9pm</span>
+            <span class="custom-text-muted d-block">Sunday (9am-1pm)</span>
+          </div>
+        </div>
+      </div>
+      <div class="footer-middle">
+        <div class="button-top">
+          <div class="heart-icons">
+            <i class="fa fa-heart-o heart-1"></i>
+            <i class="fa fa-heart heart-2"></i>
+          </div>
+          <a
+            id="about-btn"
+            class="btn btn-outline-dark mt-5"
+            href="contact.html"
+          >
+            Contact Us
+          </a>
+
+          <h6 class="mt-4">We're committed to Service Excellence.</h6>
+        </div>
+      </div>
+
+      <div class="footer-navbar">
+        <div class="nav navbar-dark">
+          <ul id="footer-nav">
+            <li>
+              <a href="index.html">HOME</a>
+            </li>
+            <li>
+              <a href="about.html">ABOUT</a>
+            </li>
+            <li>
+              <a href="matches.html">MATCHES</a>
+            </li>
+            <li>
+              <a href="contact.html">CONTACT</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="copyright-info">
+        <h6 class="mt-4">&copy; Elite Match All Rights Reserved.</h6>
+      </div>
+    </footer>
+
+    <script
+      src="https://kit.fontawesome.com/d8168e9d08.js"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>

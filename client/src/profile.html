@@ -1,0 +1,487 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Matrimonial Project</title>
+    <!--<link rel="stylesheet" href="css/bootstrap.css" />
+    <link rel="stylesheet" href="css/main.css" /> -->
+    <!-- <link
+      href="https://fonts.googleapis.com/css?family=Pacifico&display=swap"
+      rel="stylesheet"
+    /> -->
+  </head>
+  <body>
+    <!-- Main Display -->
+    <div id="about__main--display">
+      <!-- Navbar -->
+      <div class="container">
+        <nav class="navbar navbar-expand-md navbar-light">
+          <a href="index.html" class="navbar-brand">
+            <h1 class="navbar__logo">
+              <span id="elite">Elite</span> <span id="match"> Match </span>
+            </h1></a
+          >
+          <button
+            class="navbar-toggler"
+            data-toggle="collapse"
+            data-target="#navbar-nav"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbar-nav">
+            <ul class="navbar-nav">
+              <li class="nav-item">
+                <a href="index.html" class="nav-link">Home</a>
+              </li>
+              <li class="nav-item">
+                <a href="about.html" class="nav-link">About</a>
+              </li>
+              <li class="nav-item">
+                <a href="matches.html" class="nav-link">Matches</a>
+              </li>
+              <li class="nav-item">
+                <a href="contact.html" class="nav-link">Contact</a>
+              </li>
+            </ul>
+          </div>
+          <div class="navbar-btns">
+            <!-- <a
+              class="btn1 btn btn-outline-light py-2 px-3"
+              id="logoutBtn"
+              href="login.html"
+              >Log Out</a
+            >
+            <a
+              class="btn1 btn btn-outline-light py-2 px-3 ml-2"
+              href="register.html"
+              >Register</a
+            > -->
+          </div>
+        </nav>
+      </div>
+    </div>
+    <!-- End of Navbar -->
+    <!-- End of Main display -->
+
+    <!-- Navigation -->
+    <section id="navigator">
+      <div class="container">
+        <a href="index.html">Home</a><i class="fas fa-angle-double-right"></i
+        ><span>Profile</span>
+      </div>
+    </section>
+    <!-- End of navigation -->
+
+    <!-- User profiles -->
+
+    <section id="matches" class="my-4">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-8">
+            <div class="row mt-5">
+              <div class="col-md-5 d-flex">
+                <div id="match__img" class="m-auto">
+                  <img
+                    class="d-block m-auto rounded-circle"
+                    style="width: 230px; height: 230px;"
+                    id="user-pic"
+                    src="./img/default.jpg"
+                  />
+                  <!-- ./img/default.jpg -->
+                  <form enctype="multipart/form-data">
+                    <div class="image-upload p-0">
+                      <label
+                        for="user-avatar"
+                        class="text-center"
+                        style="cursor: pointer;"
+                      >
+                        <i class="fas fa-pencil-alt"></i>
+                        <!-- https://icon-library.net/images/upload-photo-icon/upload-photo-icon-21.jpg -->
+                        <!-- <span id="profile_pic_label" style="margin: auto;">
+                      Select Pic
+                    </span> -->
+                      </label>
+                      <input
+                        id="user-avatar"
+                        type="file"
+                        name="photo"
+                        accept="image/*"
+                      />
+                    </div>
+                  </form>
+                  <!-- 
+              <img src="img/p4.jpg" alt="" />-->
+                </div>
+              </div>
+              <div class="col-md-7" id="basic-info">
+                <!-- <div id="about-us">
+              <h3 id="user_name">Habib Ur Rehman</h3>
+            </div> -->
+                <!-- <div id="match__data" class="">
+              <h3>Phone :</h3>
+              <span class="user_phone">923001234567</span>
+            </div>
+            <div id="match__data" class="">
+              <h3>Age :</h3>
+              <span class="user_dob">21</span>
+            </div>
+            <div id="match__data" class="">
+              <h3>Religion :</h3>
+              <span class="user_religion">Islam</span>
+            </div>
+            <div id="match__data" class="">
+              <h3>Marital Status</h3>
+              <span>Single</span>
+            </div>
+            <div id="match__data" class="">
+              <h3>Location :</h3>
+              <span class="user_loc"> Sargodha</span>
+            </div> -->
+                <!-- <div id="buttons" class="my-3">
+              <button class="btn btn-primary btn-lg">
+                Express interest
+              </button>
+              <button class="btn btn-primary btn-lg">Send Email</button>
+            </div> -->
+              </div>
+            </div>
+
+            <div class="row" id="about-match" style="border-bottom: hidden;">
+              <!-- <p>
+            <span>Hi!i am Hbrehman</span> Nam arcu mauris, tincidunt sed
+            convallis non, egestas ut lacus. Cras sapien urna, malesuada ut
+            varius consequat, hendrerit nisl. Aliquam vestibulum, odio non
+            ullamcorper malesuada.Nam arcu mauris, tincidunt sed convallis
+            non, egestas ut lacus. Cras sapien urna, malesuada ut varius
+            consequat, hendrerit nisl.
+          </p>
+
+          <button class="btn btn-primary btn-lg">Learn More</button> -->
+            </div>
+
+            <div class="row" id="user-data" style="max-width: 760px;">
+              <!-- <div class="col">
+              <h3 id="form-text"> 
+                  Education, Basics and Lifestyle
+              </h3>
+    
+                <div id="match__data">
+                  <h3>Name: </h3>
+                  <span class="user_name_1">Habib Ur Rehman</span>
+                </div>
+                <div id="match__data" class="">
+                  <h3>Phone :</h3>
+                  <span class="user_phone">923001234567</span>
+                </div>
+                <div id="match__data" class="">
+                  <h3>Age :</h3>
+                  <span class="user_dob">21</span>
+                </div>
+                <div id="match__data" class="">
+                  <h3>Religion :</h3>
+                  <span class="user_religion">Islam</span>
+                </div>
+                <div id="match__data" class="">
+                  <h3>Marital Status</h3>
+                  <span>Single</span>
+                </div>
+                <div id="match__data" class="">
+                  <h3>Location :</h3>
+                  <span class="user_loc"> Sargodha</span>
+                </div>
+              </div> -->
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- End of User porfile -->
+
+    <!-- Forms -->
+    <section id="register" class="my-5">
+      <div class="container">
+        <div class="row" id="forms-row">
+          <div id="about-us" class="text-center forms-heading">
+            <h3 class="pb-3">
+              Please fill out the forms below and let people know more about you
+            </h3>
+          </div>
+          <!-- <div class="col-md my-2" id="info-column">
+                  <form id="ebl_form" style="height: 100%;" autocomplete="off"> 
+                    <div id="info-form" style="display: flex; flex-direction: column;">
+                     <h3 class="text-center" id="form-text">Education, Basics & Lifestyle </h3>
+
+                      <div id="alert-info"></div>
+                       
+                        <div id="input-parent">
+                          <span >Education:</span>  
+                          <input type="text" name="education" required class="input-itself" minlength="3" maxlength="255" placeholder="Education" >
+                        </div>
+
+                        <div id="input-parent">
+                          <span >Profession:</span>  
+                          <input type="text" name="profession" required minlength="3" maxlength="20"  class="input-itself"  placeholder="Profession" >
+                        </div>
+
+                        <div id="input-parent">
+                            <span >Mother Tongue:</span>  
+                            <input type="text" name="motherTongue" required class="input-itself" placeholder="Mother Tongue" >
+                        </div>
+
+
+                        <div id="input-parent">
+                            <span> Complexion:</span>  
+                            <input type="text" minlength="3" name="complexion" class="input-itself" required placeholder="Complexion" >
+                        </div>
+
+                        <div id="input-parent">
+                            <span> Weight:</span>  
+                            <input type="text" name="weight" required class="input-itself" placeholder="Weight" >
+                        </div>
+
+                        <div id="input-parent">
+                            <span> Diet:</span>  
+                            <input type="text" required minlength="3" name="diet" class="input-itself" placeholder="Diet" >
+                        </div>
+
+                        <div id="input-parent">
+                            <span> Height:</span>  
+                            <input type="text" required minlength="3" name="height" class="input-itself" placeholder="Height" >
+                        </div>
+
+                        <div id="input-parent" class="pb-4">
+                            <span> About Yourself:</span>  
+                            <textarea type="text" minlength="10" maxlength="500" required name="about" rows="1" class="input-itself mb-0" placeholder="Describe Yourself (200-500 words)" ></textarea>
+                        </div>
+
+                        <button id="EBL_submit_btn" type="submit" class="btn btn-block btn-primary mt-auto">
+                          Submit
+                        </button>
+                        <b class="text-danger m-0" style="font-size: 12px">All Fields in this table are mendatory </b>
+
+                    </div>
+                  </form>
+                </div> -->
+          <!-- End of Form -->
+
+          <!-- what i am looking for  -->
+          <!-- <div class="col-md  my-2"  id="info-column">
+                    <form id="interests_info" style="height: 100%;" autocomplete="off"> 
+                    <div id="info-form" style="display: flex; flex-direction: column;">
+                     <h3 class="text-center" id="form-text">What I am Looking For </h3>
+
+                      <div id="alert-interest"></div>
+                       
+                        <div id="input-parent">
+                          <span >Age:</span>  
+                          <input type="text" name="age" class="input-itself"  placeholder="Age" >
+                        </div>
+
+                        <div id="input-parent">
+                          <span >Marital Status:</span>  
+                          <input type="text" name="maritalStatus" minlength="3" maxlength="20"  class="input-itself"  placeholder="Marital Status" >
+                        </div>
+
+                        <div id="input-parent">
+                            <span >Complexion:</span>  
+                            <input type="text" name="complexion" class="input-itself" placeholder="Complexion" >
+                        </div>
+
+                        <div id="input-parent">
+                            <span >Height:</span>  
+                            <input type="text"  name="height" class="input-itself" placeholder="Height" >
+                        </div>
+
+                        <div id="input-parent">
+                            <span> Caste:</span>  
+                            <input type="text" minlength="3" name="caste" class="input-itself" placeholder="Caste" >
+                        </div>
+
+                        <div id="input-parent">
+                            <span> Religion:</span>  
+                            <input type="text" name="religion" class="input-itself" placeholder="Religion" >
+                        </div>
+
+                        <div id="input-parent">
+                            <span> Diet:</span>  
+                            <input type="text" minlength="3" name="diet" class="input-itself" placeholder="Dite" >
+                        </div>
+
+                        <button id="interest_submit_btn" type="submit" class="btn btn-block btn-primary" style="margin-top: auto !important;">
+                          Submit
+                        </button>
+                        <b class="text-danger" style="font-size: 12px">All Fields in this table are mendatory </b>
+                    </div>
+                  </form>
+            </div> -->
+
+          <!-- Family Details -->
+          <!-- <div class="col-md  my-2" id="info-column">
+                    <form  id="family_info" style="height: 100%;"  autocomplete="off"> 
+                    <div id="info-form" style="display: flex; flex-direction: column;">
+                     <h3 class="text-center" id="form-text">Family Details </h3>
+
+                      <div id="alert-family"></div>
+                       
+                      <div id="input-parent">
+                        <span >Caste:</span>  
+                        <input type="text"  name="caste" required class="input-itself" placeholder="Caste" >
+                    </div>
+                        <div id="input-parent">
+                          <span >Fathers Name:</span>  
+                          <input type="text" name="fatherName" class="input-itself" minlength="3" maxlength="255" placeholder="Fathers Name" >
+                        </div>
+
+                        <div id="input-parent">
+                          <span >Fathers Education:</span>  
+                          <input type="text" name="fathersEdu" minlength="3" maxlength="20"  class="input-itself"  placeholder="Fathers Education" >
+                        </div>
+
+                        <div id="input-parent">
+                            <span >Mothers Name:</span>  
+                            <input type="text" name="mothersName" class="input-itself" placeholder="Mothers Name" >
+                        </div>
+
+                        <div id="input-parent">
+                            <span >Mothers Occupation:</span>  
+                            <input type="text"  name="mothersOcu" class="input-itself" placeholder="Mothers Occupation" >
+                        </div>
+
+                        <div id="input-parent">
+                            <span> No. of Brothers:</span>  
+                            <input type="text" minlength="3" name="noBros" class="input-itself" placeholder="No. Of Brothers" >
+                        </div>
+
+                        <div id="input-parent">
+                            <span> No. of Sisters:</span>  
+                            <input type="text" name="noSis" class="input-itself" placeholder="No of Sisters" >
+                        </div>
+
+                        <button id="FD_submit_btn" type="submit" class="btn btn-block btn-primary mt-auto">
+                          Submit
+                        </button>
+                        <b class="text-danger m-0" style="font-size: 12px">All Fields in this table are mendatory </b>
+
+                    </div>
+                  </form>
+            </div> -->
+          <!-- end of family details -->
+        </div>
+      </div>
+    </section>
+
+    <div class="modal fade" id="interest-modal">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header text-white">
+            <h5 class="modal-title">Interest Alert</h5>
+            <button class="close" data-dismiss="modal">
+              <span>&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <p class="px-5" id="msg-for-interest"></p>
+          </div>
+          <div class="modal-footer justify-content-start">
+            <!-- <a
+              href="void:javascript(0)"
+              id="view-prof-btn"
+              class="btn standard-btn ml-auto mr-1"
+            >
+              Visit Profile
+            </a> -->
+            <a
+              href="void:javascript(0)"
+              id="dismiss-btn"
+              class="btn standard-btn ml-auto mr-1"
+            >
+              Dismiss
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Footer  -->
+    <footer class="pt-5 text-center">
+      <div class="container">
+        <div class="row mb-5">
+          <div class="col-sm-4 mb-4">
+            <h3>Location:</h3>
+            <span class="custom-text-muted d-block"
+              >Dummy Adress, Sargodha</span
+            >
+            <span class="custom-text-muted d-block">Punjab, Pakistan</span>
+          </div>
+          <div class="col-sm-4 mb-4">
+            <h3>Contact us:</h3>
+            <span class="d-block"
+              >Phone: &nbsp;<span class="custom-text-muted"
+                >923001234567</span
+              ></span
+            >
+            <span class="d-block"
+              >Email:&nbsp;<span class="custom-text-muted email">
+                someone@example.com</span
+              ></span
+            >
+          </div>
+          <div class="col-sm-4 mb-4">
+            <h3>Opening hours:</h3>
+            <span class="custom-text-muted d-block">Working days (8am-9pm</span>
+            <span class="custom-text-muted d-block">Sunday (9am-1pm)</span>
+          </div>
+        </div>
+      </div>
+      <div class="footer-middle">
+        <div class="button-top">
+          <div class="heart-icons">
+            <i class="fa fa-heart-o heart-1"></i>
+            <i class="fa fa-heart heart-2"></i>
+          </div>
+          <a
+            id="about-btn"
+            class="btn btn-outline-dark mt-5"
+            href="contact.html"
+          >
+            Contact Us
+          </a>
+
+          <h6 class="mt-4">We're committed to Service Excellence.</h6>
+        </div>
+      </div>
+
+      <div class="footer-navbar">
+        <div class="nav navbar-dark">
+          <ul id="footer-nav">
+            <li>
+              <a href="index.html">HOME</a>
+            </li>
+            <li>
+              <a href="about.html">ABOUT</a>
+            </li>
+            <li>
+              <a href="matches.html">MATCHES</a>
+            </li>
+            <li>
+              <a href="contact.html">CONTACT</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="copyright-info">
+        <h6 class="mt-4">&copy; Elite Match All Rights Reserved.</h6>
+      </div>
+    </footer>
+
+    <!-- End of footer -->
+    <script src="https://transloadit.edgly.net/releases/uppy/v1.9.2/uppy.min.js"></script>
+    <script
+      src="https://kit.fontawesome.com/d8168e9d08.js"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>

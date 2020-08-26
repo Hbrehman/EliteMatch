@@ -23,6 +23,11 @@ process.on("uncaughtException", (ex) => {
 // Body parser
 app.use(express.json());
 
+app.use(express.static("client/dist"));
+app.get("/", (req, res) => {
+  res.sendFile(path.resolve(__dirname, "client", "dist", "index.html"));
+});
+
 // Middleware to serve static content
 app.use(express.static(`${__dirname}/public`));
 
