@@ -4,13 +4,13 @@
   "description": "",
   "main": "app.js",
   "scripts": {
-    "start": "node server.js",
+    "start": "node app.js",
     "start:both": "concurrently \"npm run start:server\" \"npm run start:client\"",
-    "dev": "nodemon server.js",
+    "dev": "nodemon app.js",
     "build": "cd client && npm run build",
     "install:client": "npm install --prefix client",
     "install:server": "npm install",
-    "start:server": "nodemon server.js",
+    "start:server": "nodemon app.js",
     "start:client": "npm start --prefix client",
     "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install && npm run install:client && npm run build"
   },
