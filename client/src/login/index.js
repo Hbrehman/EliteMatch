@@ -3,7 +3,7 @@ import "bootstrap";
 import "../scss/main.scss";
 const path = require("path");
 import "./../utils/loginCheck";
-
+import { url } from "./../utils/general";
 // Dom caching
 const email = document.querySelector('input[name="email"]');
 const password = document.querySelector('input[name="password"]');
@@ -39,10 +39,7 @@ function getUserData() {
 async function postToServer(userData) {
   try {
     // send a post request to api
-    let response = await axios.post(
-      "http://localhost:8000/v1/api/users/login",
-      userData
-    );
+    let response = await axios.post(`${url}v1/api/users/login`, userData);
     console.log(response.data);
     if (response.data.token) {
       // localStorage.setItem("x-auth-token", response.headers["x-auth-token"]);

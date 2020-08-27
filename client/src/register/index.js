@@ -3,6 +3,7 @@ import axios from "axios";
 import "bootstrap";
 import "../scss/main.scss";
 import "./../utils/loginCheck";
+import { url } from "./../utils/loginCheck";
 
 // Dom caching
 const name = document.querySelector('input[name="name"]');
@@ -59,10 +60,7 @@ function getUserData() {
 async function postToServer(userData) {
   try {
     // send a post request to api
-    let response = await axios.post(
-      "http://localhost:8000/v1/api/users/signup",
-      userData
-    );
+    let response = await axios.post(`${url}v1/api/users/signup`, userData);
     // console.log(response.headers["x-auth-token"]);
 
     localStorage.setItem("x-auth-token", response.data.token);

@@ -4,6 +4,7 @@ import jwt_decode from "jwt-decode";
 
 import { elements } from "./base";
 import "./../utils/loginCheck";
+import { staticUrl } from "./../utils/general";
 
 import {
   getFormInput,
@@ -50,7 +51,7 @@ if (token) {
       setTimeout(() => {
         elements.profilePic.setAttribute(
           "src",
-          `http://localhost:8000/img/user/${response.data.data.photo}`
+          `${staticUrl}img/user/${response.data.data.photo}`
         );
       }, 0);
     }

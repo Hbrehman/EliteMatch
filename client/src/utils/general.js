@@ -1,9 +1,13 @@
 import "bootstrap";
 import "../scss/main.scss";
-console.log("this is general file");
 import $ from "jquery";
 import slick from "slick-carousel";
 import "./loginCheck.js";
+
+// export const url = "http://127.0.0.1:8000/";
+// export const staticUrl = "http://127.0.0.1:8000/";
+export const staticUrl = "/";
+export const url = "/";
 
 // Video Play
 if ($(".video")) {

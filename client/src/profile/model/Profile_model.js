@@ -1,10 +1,12 @@
 import axios from "axios";
 import { showError } from "./../view/profile_view";
+import { url } from "./../utils/general";
+import { staticUrl } from "./../utils/general";
 
 export const uploadProfPic = async (resource, data, userId) => {
   try {
     let response = await axios.patch(
-      `http://localhost:8000/v1/api/users/${resource}/${userId}`,
+      `${url}v1/api/users/${resource}/${userId}`,
       data
     );
     return response;
@@ -16,7 +18,7 @@ export const uploadProfPic = async (resource, data, userId) => {
 export const getImage = async () => {
   try {
     let response = await axios.get(
-      `http://localhost:8000/img/user/userName-1582717102157.jpeg`
+      `${staticUrl}img/user/userName-1582717102157.jpeg`
     );
     return response;
   } catch (ex) {
@@ -26,9 +28,7 @@ export const getImage = async () => {
 
 export const getBasicInfo = async (resource, userId) => {
   try {
-    let response = await axios.get(
-      `http://localhost:8000/v1/api/users/${resource}/${userId}`
-    );
+    let response = await axios.get(`${url}v1/api/users/${resource}/${userId}`);
     return response;
   } catch (ex) {
     console.log(ex);
@@ -39,7 +39,7 @@ export async function postData(data, resource, userId) {
   try {
     // send a put request to api
     let response = await axios.put(
-      `http://localhost:8000/v1/api/users/${resource}/${userId}`,
+      `${url}v1/api/users/${resource}/${userId}`,
       data
     );
     return response;
@@ -58,9 +58,7 @@ export async function postData(data, resource, userId) {
 
 export async function getData(resource, userId) {
   try {
-    let response = await axios.get(
-      `http://localhost:8000/v1/api/users/${resource}/${userId}`
-    );
+    let response = await axios.get(`${url}v1/api/users/${resource}/${userId}`);
     return response;
   } catch (ex) {
     console.log(ex.response.data);
@@ -70,7 +68,7 @@ export async function getData(resource, userId) {
 export async function updateOneDataEl(data, resource, userId) {
   try {
     let response = await axios.patch(
-      `http://localhost:8000/v1/api/users/${resource}/${userId}`,
+      `${url}v1/api/users/${resource}/${userId}`,
       data
     );
     return response;

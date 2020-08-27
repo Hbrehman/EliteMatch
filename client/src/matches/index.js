@@ -5,6 +5,8 @@ import "bootstrap";
 import "../scss/main.scss";
 
 import "./../utils/loginCheck";
+import { url } from "./../utils/general";
+import { staticUrl } from "./../utils/general";
 
 const matchesParent = document.getElementById("matches-parent");
 const userInfoBtn = document.getElementById("learn-more-btn");
@@ -12,9 +14,7 @@ const expressInterestBtn = document.getElementById("express-interest");
 
 getAllUsers();
 async function getAllUsers() {
-  let response = await axios.get(
-    "http://localhost:8000/v1/api/users/getMatches"
-  );
+  let response = await axios.get(`${url}v1/api/users/getMatches`);
 
   // console.log(response.data.data);
   listMatchesOnUI(response.data.data);
@@ -37,7 +37,7 @@ matchesParent.addEventListener("click", (e) => {
 async function updateOneDataEl(data, userId) {
   try {
     let response = await axios.patch(
-      `http://localhost:8000/v1/api/users/basic/${userId}`,
+      `${url}v1/api/users/basic/${userId}`,
       data
     );
     console.log(response);
@@ -55,9 +55,7 @@ async function listMatchesOnUI(matches) {
   if (token) {
     const { id } = jwtDecode(token);
     try {
-      let response = await axios.get(
-        `http://localhost:8000/v1/api/users/basic/${id}`
-      );
+      let response = await axios.get(`${url}v1/api/users/basic/${id}`);
       console.log(response.data.data);
       matches = matches.filter((c) => {
         if (response.data.data.gender != c.gender) return c;
@@ -73,7 +71,7 @@ async function listMatchesOnUI(matches) {
     <div class="row my-3">
       <div class="col-sm-4 d-flex justify-content-center">
         <div id="match__img">
-          <img src="http://localhost:8000/img/user/${current.photo}" alt="" />
+          <img src="${staticUrl}img/user/${current.photo}" alt="" />
         </div>
       </div>
       <div class="col-sm-8 mt-4">
@@ -120,8 +118,6 @@ async function listMatchesOnUI(matches) {
         <p>
           <span>Hi!i am ${current.name}</span> ${current.usersEbl.about}
         </p>
-
-
       </div>
     </div>
   </div>`;
