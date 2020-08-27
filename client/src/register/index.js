@@ -3,7 +3,7 @@ import axios from "axios";
 import "bootstrap";
 import "../scss/main.scss";
 import "./../utils/loginCheck";
-import { url } from "./../utils/loginCheck";
+import { url } from "./../utils/general";
 
 // Dom caching
 const name = document.querySelector('input[name="name"]');
