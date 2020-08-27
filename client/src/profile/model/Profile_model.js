@@ -1,7 +1,7 @@
 import axios from "axios";
 import { showError } from "./../view/profile_view";
-import { url } from "./../utils/general";
-import { staticUrl } from "./../utils/general";
+import { url } from "./../../utils/general";
+import { staticUrl } from "./../../utils/general";
 
 export const uploadProfPic = async (resource, data, userId) => {
   try {
