@@ -6,7 +6,7 @@ const AppError = require("./../utils/appError");
 const catchAsync = require("./../utils/catchAsync");
 const bcryptjs = require("bcryptjs");
 const { User, validate } = require("./../model/user_model");
-const Joi = require("Joi");
+const Joi = require("joi");
 
 // Sign Up User
 module.exports.signUp = catchAsync(async (req, res, next) => {
