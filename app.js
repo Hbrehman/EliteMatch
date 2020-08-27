@@ -12,8 +12,8 @@ const app = express();
 
 // Map data from config.env to environment variables
 dotenv.config({ path: "./config.env" });
-app.set("view engine", "pug");
-app.set("views", path.join(__dirname, "views"));
+require("./utils/db");
+
 // Handling unhandled exceptions
 process.on("uncaughtException", (ex) => {
   console.log(ex);

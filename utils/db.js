@@ -4,7 +4,7 @@ let DB;
 if (process.env.NODE_ENV === "production") {
   DB = process.env.DATABASE;
 } else {
-  DB = process.env.DATABASE_LOCAL;
+  DB = process.env.DATABASE_LOCAL || "mongodb://localhost:27017/matrimonial";
 }
 
 mongoose
