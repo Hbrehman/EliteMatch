@@ -8,12 +8,15 @@ if (process.env.NODE_ENV === "production") {
 }
 
 mongoose
-  .connect(DB, {
-    useNewUrlParser: true,
-    useUnifiedTopology: true,
-    useCreateIndex: true,
-    useFindAndModify: false,
-  })
+  .connect(
+    "mongodb+srv://hbrehman:hbrehman@cluster0.vkxnh.mongodb.net/EliteMatch?retryWrites=true&w=majority",
+    {
+      useNewUrlParser: true,
+      useUnifiedTopology: true,
+      useCreateIndex: true,
+      useFindAndModify: false,
+    }
+  )
   .then(() => {
     console.log("DB connection Successful");
   })
